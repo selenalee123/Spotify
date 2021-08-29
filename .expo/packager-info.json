@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19004,
   "expoServerPort": 19000,
-  "packagerPort": 19005,
-  "packagerPid": 29972,
-  "expoServerNgrokUrl": "https://t8-wti.anonymous.spotifyclone.exp.direct",
-  "packagerNgrokUrl": "https://packager.t8-wti.anonymous.spotifyclone.exp.direct",
-  "ngrokPid": 13688,
+  "packagerPort": 19001,
+  "packagerPid": 9656,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "webpackServerPort": null
 }

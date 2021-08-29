@@ -43,7 +43,7 @@ export default function BottomTabNavigator() {
         name="Your Library"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="library-music-outline" size={30} style={{ marginBottom: -3 }} color={color} />,
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="account-music-outline" size={30} style={{ marginBottom: -3 }} color={color} />,
         }}
       />
       <BottomTab.Screen

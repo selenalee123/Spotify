@@ -1,34 +1,42 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Text, Image, View, TouchableOpacity } from 'react-native';
+import React, {useContext, useEffect, useState} from 'react';
+import {Text, Image, View, TouchableOpacity} from 'react-native';
 import { AntDesign, FontAwesome } from "@expo/vector-icons";
-import { Sound } from "expo-av/build/Audio/Sound";
+import { API, graphqlOperation } from 'aws-amplify';
+
 import styles from './styles';
-import { Song } from "../../types";
+import {Song} from "../../types";
+import {Sound} from "expo-av/build/Audio/Sound";
 
-const song = {
-  id: '1',
-  uri: 'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba-online-audio-converter.com_-1.wav',
-  imageUri: 'https://cache.boston.com/resize/bonzai-fba/Globe_Photo/2011/04/14/1302796985_4480/539w.jpg',
-  title: 'High on You',
-  artist: 'Kim Kim Ly',
-}
-
-
+import { AppContext } from '../../AppContext';
+import {getSong} from "../../src/graphql/queries";
 
 const PlayerWidget = () => {
-  // const [song, setSong] = useState(null);
-  const [sound, setSound] = useState<Sound | null>(null);
-  const [isPlaying, setIsPlaying] = useState<boolean>(true);
-  const [duration, setDuration] = useState<number | null>(null);
-  const [position, setPosition] = useState<number | null>(null);
 
-  // const { songId } = useContext(AppContext);
+  const [song, setSong] = useState(null);
+  const [sound, setSound] = useState<Sound|null>(null);
+  const [isPlaying, setIsPlaying] = useState<boolean>(true);
+  const [duration, setDuration] = useState<number|null>(null);
+  const [position, setPosition] = useState<number|null>(null);
+
+  const { songId } = useContext(AppContext);
+
+  useEffect(() => {
+    const fetchSong = async () => {
+      try {
+        const data = await API.graphql(graphqlOperation(getSong, { id: songId }))
+        setSong(data.data.getSong);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+
+    fetchSong();
+  }, [songId])
 
   const onPlaybackStatusUpdate = (status) => {
     setIsPlaying(status.isPlaying);
     setDuration(status.durationMillis);
     setPosition(status.positionMillis);
-
   }
 
   const playCurrentSong = async () => {
@@ -76,7 +84,7 @@ const PlayerWidget = () => {
 
   return (
     <View style={styles.container}>
-      <View style={[styles.progress, { width: `${getProgress()}%` }]} />
+      <View style={[styles.progress, { width: `${getProgress()}%`}]} />
       <View style={styles.row}>
         <Image source={{ uri: song.imageUri }} style={styles.image} />
         <View style={styles.rightContainer}>
@@ -86,9 +94,9 @@ const PlayerWidget = () => {
           </View>
 
           <View style={styles.iconsContainer}>
-            <AntDesign name="hearto" size={30} color={"white"} />
+            <AntDesign name="hearto" size={30} color={"white"}/>
             <TouchableOpacity onPress={onPlayPausePress}>
-              <FontAwesome name={isPlaying ? 'pause' : 'play'} size={30} color={"white"} />
+              <FontAwesome name={isPlaying ? 'pause' : 'play'} size={30} color={"white"}/>
             </TouchableOpacity>
           </View>
         </View>

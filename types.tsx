@@ -14,7 +14,7 @@ export type TabOneParamList = {
 };
 
 export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+  Playlist: undefined;
 };
 
 export type Album = {
