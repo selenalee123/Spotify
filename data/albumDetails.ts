@@ -7,12 +7,12 @@ export default {
   artistsHeadline: 'Taylor Swift, Kygo Objective C, Avicii',
   songs: [{
     id: '1',
-    imageUri: 'https://cache.boston.com/resize/bonzai-fba/Globe_Photo/2011/04/14/1302796985_4480/539w.jpg',
+    imageUri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsKi6n5EKVqemAiQaHaJLoX9l2AdO2OHgCqw&usqp=CAU',
     title: 'High on You',
-    artist: 'Helen',
+    artist: 'Xuka',
   },{
     id: '2',
-    imageUri: 'https://cdn6.f-cdn.com/contestentries/1485199/27006121/5ca3e39ced7f1_thumb900.jpg',
+    imageUri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhdhyxNeB_zetBRoFW7GP1fjPAvaPjh-i2dQ&usqp=CAU',
     title: 'Lorem Ipsum',
     artist: 'Artist 2',
   },{
