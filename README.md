@@ -15,6 +15,7 @@ Android/IOS/IPAD/Android tablet
 
 Author: Kim Kim Ly 
 https://www.linkedin.com/in/kimkimly123/
+
 Running Project Locally
 
 Install dependencies: run npm install in root project
