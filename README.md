@@ -20,3 +20,5 @@ Running Project Locally
 Install dependencies: run npm install in root project
 
 <img src="https://github.com/selenalee123/Spotify/blob/main/assets/images/Demo.gif" width="300" height="600"/>
+<img src="https://github.com/selenalee123/Spotify/blob/main/assets/Demo/Screenshot_1630254390.png" width="300" height="600"/>
+<img src="https://github.com/selenalee123/Spotify/blob/main/assets/Demo/Screenshot_1630254705.png" width="300" height="600"/>
