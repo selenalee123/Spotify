@@ -1,5 +1,5 @@
 # Spotify
-This project is a simplified front end clone of Spotify. It was created with Reactnative and AWS. It uses The Music Api to search for music and display songs. Feel free to contribute!
+This project is a simplified Fullstack clone of Spotify. It was created with Reactnative and AWS. It uses The Music Api to search for music and display songs. Feel free to contribute!
 
 Tools used:
 Backend:  
